@@ -1,9 +1,18 @@
 import React from 'react';
 
-function MatchedCardComponent() {
-  return (
-    <p>Hello world!</p>
-  );
+interface MatchedCardProps {
+    name: string;
+    age: number;
+    profileImageUrl: string;
 }
 
-export default MatchedCardComponent;
+const MatchedCard: React.FC<MatchedCardProps> = ({ name, age, profileImageUrl }) => {
+    return (
+        <div className="matched-card">
+            <img src={profileImageUrl} alt={`Perfil de ${name}`} />
+            <h2>{name}, {age}</h2>
+        </div>
+    );
+};
+
+export default MatchedCard;
