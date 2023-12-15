@@ -11,6 +11,8 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\component\" />
+    <Folder Include="public\img\" />
+    <Folder Include="public\Styles\" />
+    <Folder Include="src\assets\" />
   </ItemGroup>
 </Project>
