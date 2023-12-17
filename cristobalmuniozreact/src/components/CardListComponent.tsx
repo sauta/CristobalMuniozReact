@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Card from './CardComponent';
 import { profiles, Profile } from '../data';
 
-
 interface CardListProps {
     onProfileAccepted: (profile: Profile) => void;
 }
