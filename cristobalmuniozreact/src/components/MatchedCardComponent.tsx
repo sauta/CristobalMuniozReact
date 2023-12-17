@@ -1,18 +1,31 @@
 import React from "react";
+import Perfiles from "./PerfilComponent";
 
 interface MatchedCardProps {
     name: string;
     age: number;
-    image: string;
+    images: string[];
+    description: string;
 }
 
-const MatchedCard: React.FC<MatchedCardProps> = ({ name, age, image }) => {
+const MatchedCard: React.FC<MatchedCardProps> = ({ name, age, images, description  }) => {
     return (
-        <div className="matched-card">
-            <img src={image} alt={`${name}'s profile`} />
-            <h2>{name}, {age}</h2>
-            <p>¡Match! Has encontrado una coincidencia.</p>
-        </div>
+        <>
+            <Perfiles
+                name={name}
+                age={age}
+                images={images}
+                description={description}
+                node={
+                    <>
+                            <p>{description}</p>
+                            <p>¡Match! Has encontrado una coincidencia.</p>
+                    </>
+                }
+            >
+            </Perfiles>
+        </>
+     
     );
 };
 

@@ -5,6 +5,7 @@ import './assets/css/CardTinder.css';
 import './assets/css/MyStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
     <App />

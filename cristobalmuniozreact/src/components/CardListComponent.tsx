@@ -1,41 +1,41 @@
 import React, { useState } from 'react';
 import Card from './CardComponent';
 import { profiles, Profile } from '../data';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+
 
 interface CardListProps {
     onProfileAccepted: (profile: Profile) => void;
 }
 
-
 const CardList: React.FC<CardListProps> = ({ onProfileAccepted }) => {
-
     const [profileIndex, setProfileIndex] = useState(0);
-    const [rejectedProfiles, setRejectedProfiles] = useState<Profile[]>([]); // Define el tipo para rejectedProfiles
+    const [rejectedProfiles, setRejectedProfiles] = useState<Profile[]>([]);
 
     const handleSwipeLeft = () => {
-        if (profileIndex < profiles.length) {
-            setRejectedProfiles(prevRejected => [...prevRejected, profiles[profileIndex]]);
-            setProfileIndex(prevIndex => prevIndex + 1);
+        if (profileIndex < profiles.length - 1) {
+            setRejectedProfiles((prevRejected: Profile[]) => [...prevRejected, profiles[profileIndex]]);
+           setProfileIndex(prevIndex => prevIndex + 1);
         }
     };
 
     const handleSwipeRight = () => {
-        if (profileIndex < profiles.length) {
+        if (profileIndex < profiles.length - 1) {
             onProfileAccepted(profiles[profileIndex]);
             setProfileIndex(prevIndex => prevIndex + 1);
         }
     };
 
+    const currentProfile = profileIndex < profiles.length ? profiles[profileIndex] : null;
+
     return (
-       <>
-            {profileIndex < profiles.length ? (
-                <div key={profileIndex} className="">
+        <>
+            {currentProfile ? (
+                <div key={currentProfile.id} className="">
                     <Card
-                        name={profiles[profileIndex].name}
-                        age={profiles[profileIndex].age}
-                        profile={`${profiles[profileIndex].image}`}
+                        name={currentProfile.name}
+                        age={currentProfile.age}
+                        images={currentProfile.images }
+                        description={currentProfile.description}
                         onSwipeLeft={handleSwipeLeft}
                         onSwipeRight={handleSwipeRight}
                     />
@@ -48,4 +48,3 @@ const CardList: React.FC<CardListProps> = ({ onProfileAccepted }) => {
 };
 
 export default CardList;
-

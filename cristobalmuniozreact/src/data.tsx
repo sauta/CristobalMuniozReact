@@ -2,24 +2,22 @@
 export type Profile = {
     name: string;
     age: number;
-    image:  string;
+    images: string[];
+    description: string;
 }
 
-
 export const profiles = [
-    { id: 1, name: "Pepe", age: 26, image: "src/assets/img/pepa_waifu.jpg" },
-    { id: 2, name: "Juan", age: 30, image: "src/assets/img/pepe_agusto.jpg" },
-    { id: 3, name: "Ana", age: 22, image: "src/assets/img/pepe_dios.jpg" },
-    { id: 4, name: "Laura", age: 28, image: "src/assets/img/pepe_empresario.png" },
-    { id: 5, name: "Carlos", age: 25, image: "src/assets/img/pepe_feliz.png" },
-    { id: 6, name: "Marta", age: 32, image: "src/assets/img/pepe_goku.jpg" },
-    { id: 7, name: "Pedro", age: 29, image: "src/assets/img/pepe_golpeando.jpg" },
-    { id: 8, name: "Sofía", age: 23, image: "src/assets/img/pepe_mamado.jpg" },
-    { id: 9, name: "Javier", age: 27, image: "src/assets/img/pepe_naruto.jpg" },
-    { id: 10, name: "Elena", age: 31, image: "src/assets/img/pepe_neo.jpg" },
-    { id: 11, name: "Luis", age: 24, image: "src/assets/img/pepe_pikachu.jpg" },
-    { id: 12, name: "Isabel", age: 33, image: "src/assets/img/pepe_rojo.jpg" },
-    { id: 13, name: "Diego", age: 28, image: "src/assets/img/pepe_sad.jpg" },
-    { id: 14, name: "Carmen", age: 26, image: "src/assets/img/pepe_stock.png" },
+    { id: 1, name: "Pepa Waifu", age: 26, images: ["src/assets/img/pepa_waifu.jpg", "src/assets/img/pepe_dios.jpg"], description: "Una waifu encantadora." },
+    { id: 2, name: "Pepe Agusto", age: 30, images: ["src/assets/img/pepe_agusto.jpg", "src/assets/img/pepa_waifu.jpg"], description: "Siempre relajado y de buen humor." },
+    { id: 3, name: "Pepe Dios", age: 22, images: ["src/assets/img/pepe_dios.jpg", "src/assets/img/pepe_feliz.png"], description: "Posee habilidades divinas." },
+    { id: 4, name: "Pepe Empresario", age: 28, images: ["src/assets/img/pepe_empresario.png"], description: "Exitoso en el mundo de los negocios." },
+    { id: 5, name: "Pepe Goku", age: 32, images: ["src/assets/img/pepe_goku.jpg"], description: "Tiene un espíritu guerrero como Goku." },
+    { id: 6, name: "Pepe Golpeando", age: 29, images: ["src/assets/img/pepe_golpeando.jpg"], description: "Experto en artes marciales." },
+    { id: 7, name: "Pepe Mamado", age: 23, images: ["src/assets/img/pepe_mamado.jpg"], description: "Un auténtico amante del gimnasio." },
+    { id: 8, name: "Pepe Naruto", age: 27, images: ["src/assets/img/pepe_naruto.jpg"], description: "Fanático de Naruto y las artes ninja." },
+    { id: 9, name: "Pepe Neo", age: 31, images: ["src/assets/img/pepe_neo.jpg"], description: "Viviendo en un mundo de realidad virtual." },
+    { id: 10, name: "Pepe Pikachu", age: 24, images: ["src/assets/img/pepe_pikachu.jpg"], description: "Amante de los Pokémon, especialmente de Pikachu." },
+    { id: 11, name: "Pepe Rojo", age: 33, images: ["src/assets/img/pepe_rojo.jpg"], description: "Apasionado y enérgico como el color rojo." },
+    { id: 12, name: "Pepe Sad", age: 28, images: ["src/assets/img/pepe_sad.jpg"], description: "A veces melancólico, pero siempre auténtico." },
+    { id: 13, name: "Pepe Stock", age: 26, images: ["src/assets/img/pepe_stock.png"], description: "Clásico y versátil, como un stock de imágenes." },
 ];
-
