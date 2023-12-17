@@ -1,9 +1,6 @@
 ﻿import React, { useState } from 'react';
 import CardList from './components/CardListComponent';
 import MatchList from './components/MatchListComponent';
-import './assets/css/App.css';
-import './assets/css/Swipeable.css';
-import './assets/css/CardTinder.css';
 import { Profile } from './data';
 
 
