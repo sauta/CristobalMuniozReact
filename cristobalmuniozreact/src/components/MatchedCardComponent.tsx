@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
 
 interface MatchedCardProps {
     name: string;
     age: number;
-    profileImageUrl: string;
+    image: string;
 }
 
-const MatchedCard: React.FC<MatchedCardProps> = ({ name, age, profileImageUrl }) => {
+const MatchedCard: React.FC<MatchedCardProps> = ({ name, age, image }) => {
     return (
         <div className="matched-card">
-            <img src={profileImageUrl} alt={`Perfil de ${name}`} />
+            <img src={image} alt={`${name}'s profile`} />
             <h2>{name}, {age}</h2>
+            <p>¡Match! Has encontrado una coincidencia.</p>
         </div>
     );
 };

@@ -1,0 +1,14 @@
+.swipeable-button {
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    user-select: none;
+    cursor: grab;
+    transition: transform 0.3s ease;
+    // Propiedad de transición para la animación
+}
+
+    .swipeable-button.dragging {
+        transform: scale(1.1);
+        // Ejemplo de transformación al arrastrar (puedes ajustar según tus necesidades)
+    }

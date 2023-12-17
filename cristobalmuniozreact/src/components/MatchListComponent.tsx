@@ -1,18 +1,17 @@
-import React from 'react';
-import MatchedCard from './MatchedCardComponent';
-import { matchedProfiles } from '../data'; // Asume que ya has creado tu archivo de datos
+// src/components/MatchListComponent.tsx
+import React from "react";
+import MatchedCard from "./MatchedCardComponent";
 
-const MatchList: React.FC = () => {
+interface MatchListProps {
+    matchedProfiles: MatchedCardProps[];
+}
+
+const MatchList: React.FC<MatchListProps> = ({ matchedProfiles }) => {
     return (
-        <div>
-            <h2>Matches</h2>
-            {matchedProfiles.map(matchedProfile => (
-                <MatchedCard
-                    key={matchedProfile.id}
-                    name={matchedProfile.name}
-                    age={matchedProfile.age}
-                    profileImageUrl={`src/assets/img/${matchedProfile.profileImageUrl}`}
-                />
+        <div className="match-list">
+            <h2>Tus Coincidencias</h2>
+            {matchedProfiles.map((profile, index) => (
+                <MatchedCard key={index} {...profile} />
             ))}
         </div>
     );

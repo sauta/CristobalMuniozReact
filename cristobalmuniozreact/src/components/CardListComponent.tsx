@@ -1,43 +1,41 @@
 import React, { useState } from 'react';
 import Card from './CardComponent';
-import { profiles } from '../data';
-import Slider from 'react-slick';
+import { profiles, Profile } from '../data';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const CardListComponent: React.FC = () => {
-    const [profileIndex, setProfileIndex] = useState(0);
-    const [acceptedProfiles, setAcceptedProfiles] = useState<Profile[]>([]);
-    const [rejectedProfiles, setRejectedProfiles] = useState<Profile[]>([]);
+interface CardListProps {
+    onProfileAccepted: (profile: Profile) => void;
+}
 
-    const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
+
+const CardList: React.FC<CardListProps> = ({ onProfileAccepted }) => {
+
+    const [profileIndex, setProfileIndex] = useState(0);
+    const [rejectedProfiles, setRejectedProfiles] = useState<Profile[]>([]); // Define el tipo para rejectedProfiles
 
     const handleSwipeLeft = () => {
-        const currentProfile = profiles[profileIndex];
-        setRejectedProfiles([...rejectedProfiles, currentProfile]);
-        setProfileIndex((prevIndex) => prevIndex + 1);
+        if (profileIndex < profiles.length) {
+            setRejectedProfiles(prevRejected => [...prevRejected, profiles[profileIndex]]);
+            setProfileIndex(prevIndex => prevIndex + 1);
+        }
     };
 
     const handleSwipeRight = () => {
-        const currentProfile = profiles[profileIndex];
-        setAcceptedProfiles([...acceptedProfiles, currentProfile]);
-        setProfileIndex((prevIndex) => prevIndex + 1);
+        if (profileIndex < profiles.length) {
+            onProfileAccepted(profiles[profileIndex]);
+            setProfileIndex(prevIndex => prevIndex + 1);
+        }
     };
 
     return (
-        <Slider {...settings}>
+       <>
             {profileIndex < profiles.length ? (
-                <div key={profileIndex}>
+                <div key={profileIndex} className="">
                     <Card
                         name={profiles[profileIndex].name}
                         age={profiles[profileIndex].age}
-                        profile={`src/assets/img/${profiles[profileIndex].image}`}
+                        profile={`${profiles[profileIndex].image}`}
                         onSwipeLeft={handleSwipeLeft}
                         onSwipeRight={handleSwipeRight}
                     />
@@ -45,14 +43,9 @@ const CardListComponent: React.FC = () => {
             ) : (
                 <div>No hay más perfiles</div>
             )}
-        </Slider>
+        </>
     );
 };
 
-export default CardListComponent;
+export default CardList;
 
-interface Profile {
-    name: string;
-    age: number;
-    image: string;
-}
