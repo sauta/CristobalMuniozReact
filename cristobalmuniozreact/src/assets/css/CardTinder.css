@@ -1,6 +1,7 @@
 /************************
 Tinder Template by Miami
 ************************/
+
 .tbg {
     height: 720px;
     width: 400px;
@@ -14,11 +15,11 @@ Tinder Template by Miami
 }
 
 .theader {
-    height: 65px;
+    height: 80px;
     border-bottom: 1px solid #c0c0c0;
 }
 
-    .theader i.fa-comments {
+    .theader svg.fa-comments {
         color: #c0c0c0;
         font-size: 40px;
         display: inline-block;
@@ -27,7 +28,7 @@ Tinder Template by Miami
         position: relative;
     }
 
-    .theader i.fa-cog {
+    .theader svg.fa-cog {
         color: #c0c0c0;
         font-size: 40px;
         display: inline-block;
@@ -52,7 +53,6 @@ Tinder Template by Miami
     overflow: hidden;
     margin: 0 auto;
     position: relative;
-    top: 15px;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -o-border-radius: 10px;
@@ -71,6 +71,7 @@ Tinder Template by Miami
     font-size: 20px;
     font-family: 'Helvetica', sans-serif;
     float: left;
+    color: black;
 }
 
     .tname .age {
@@ -102,7 +103,6 @@ Tinder Template by Miami
     -ms-border-radius: 50%;
     position: relative;
     display: inline-block;
-    top: 50px;
     left: 25px;
     border: 10px solid #f0f0f0;
 }
@@ -110,7 +110,7 @@ Tinder Template by Miami
     .tno svg {
         color: #ff695b;
         font-size: 80px;
-        padding: 17px 28px;
+        padding: 8px 20px;
     }
 
 .ti {
@@ -123,14 +123,13 @@ Tinder Template by Miami
     -ms-border-radius: 50%;
     position: relative;
     display: inline-block;
-    left: 12px;
-    top: 30px;
+    left: 46px;
     border: 10px solid #f0f0f0;
 }
 
     .ti .fa-info {
         font-size: 23px;
-        padding: 15px 20px;
+        padding: 1px 8px;
         color: #398beb;
     }
 
@@ -144,22 +143,20 @@ Tinder Template by Miami
     -ms-border-radius: 50%;
     position: relative;
     display: inline-block;
-    top: 48px;
-    left: 0px;
+    left: 63px;
     border: 10px solid #f0f0f0;
 }
 
     .tyes svg {
         color: #5de19c;
         font-size: 60px;
-        padding: 35px 30px;
+        padding: 17px 21px;
     }
 
 .credit {
     width: 400px;
     height: auto;
     position: relative;
-    top: 60px;
     text-align: center;
     background-color: #f0f0f0;
     padding: 2px 0px;

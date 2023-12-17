@@ -9,21 +9,22 @@ const App: React.FC = () => {
     const [acceptedProfiles, setAcceptedProfiles] = useState<Profile[]>([]);
 
     return (
-        <div className="App">
-            <h1>Tinder-like App</h1>
-            <div className="App-container">
-                <div className="CardList-container">
-                    <h2>Perfiles</h2>
-                    <CardList
-                        onProfileAccepted={(profile) => setAcceptedProfiles([...acceptedProfiles, profile])}
-                    />
-                </div>
-                <div className="MatchList-container">
-                    <h2>Tus Coincidencias</h2>
-                    <MatchList matchedProfiles={acceptedProfiles} />
-                </div>
+        <>
+            <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                <main className="px-3">
+                    <h1>Tender-like App</h1>
+                    <div className="CardList-container">
+                        <h2>Perfiles</h2>
+                        <CardList
+                            onProfileAccepted={(profile) => setAcceptedProfiles([...acceptedProfiles, profile])}
+                        />
+                    </div>
+                    <div className="MatchList-container">
+                        <MatchList matchedProfiles={acceptedProfiles} />
+                    </div>
+               </main>
             </div>
-        </div>
+        </>
     );
 };
 
